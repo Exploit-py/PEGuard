@@ -1,0 +1,22 @@
+# Build
+build/
+cmake-build*/
+CMakeFiles/
+CMakeCache.txt
+
+# Qt Creator
+.qtcreator/
+*.user
+*.autosave
+
+# Binaries
+*.exe
+*.dll
+*.pdb
+*.o
+*.obj
+
+# Qt Deploy
+platforms/
+styles/
+iconengines/

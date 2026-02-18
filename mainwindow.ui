@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>650</height>
+   </rect>
+  </property>
+
+  <property name="windowTitle">
+   <string>PEGuard</string>
+  </property>
+
+  <!-- ================= CENTRAL ================= -->
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+
+    <!-- ================= SUMMARY ================= -->
+    <item>
+     <widget class="QGroupBox" name="groupBoxSummary">
+      <property name="title">
+       <string>Summary</string>
+      </property>
+
+      <layout class="QFormLayout" name="formLayoutSummary">
+
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelFileText">
+         <property name="text">
+          <string>File:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="labelFileValue">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelArchText">
+         <property name="text">
+          <string>Architecture:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="labelArchValue">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelSubsystemText">
+         <property name="text">
+          <string>Subsystem:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="labelSubsystemValue">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelImageBaseText">
+         <property name="text">
+          <string>ImageBase:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="labelImageBaseValue">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+
+       <item row="4" column="0">
+        <widget class="QLabel" name="labelEntryRvaText">
+         <property name="text">
+          <string>EntryPoint (RVA):</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLabel" name="labelEntryRvaValue">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+
+       <item row="5" column="0">
+        <widget class="QLabel" name="labelEntryVaText">
+         <property name="text">
+          <string>EntryPoint (VA):</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLabel" name="labelEntryVaValue">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+
+       <item row="6" column="0">
+        <widget class="QLabel" name="labelSectionsText">
+         <property name="text">
+          <string>Sections:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLabel" name="labelSectionsValue">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+
+       <item row="7" column="0">
+        <widget class="QLabel" name="labelScoreText">
+         <property name="text">
+          <string>Suspicion Score:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLabel" name="labelScoreValue">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+
+       <item row="8" column="0">
+        <widget class="QLabel" name="labelVerdictText">
+         <property name="text">
+          <string>Verdict:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLabel" name="labelVerdictValue">
+         <property name="text">
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+
+      </layout>
+     </widget>
+    </item>
+
+    <!-- ================= TABS ================= -->
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+
+      <!-- ===== SECTIONS TAB ===== -->
+      <widget class="QWidget" name="tabSections">
+       <attribute name="title">
+        <string>Sections</string>
+       </attribute>
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QTableWidget" name="tableSections"/>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- ===== IMPORTS TAB ===== -->
+      <widget class="QWidget" name="tabImports">
+       <attribute name="title">
+        <string>Imports</string>
+       </attribute>
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QTreeWidget" name="treeImports">
+          <column>
+           <property name="text">
+            <string>Import</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+
+  <!-- ================= MENU ================= -->
+  <widget class="QMenuBar" name="menubar">
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+
+  <widget class="QStatusBar" name="statusbar"/>
+
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+
+ </widget>
+
+ <resources/>
+ <connections/>
+</ui>
